@@ -1,11 +1,13 @@
 # My own tricks to gain time on 42 Piscine, some are taken from xtrm
 
-
+# Infos for headers
+export NAME="baldaod"
+export MAIL="baldaod@student.s19.be"
+export EMAIL="$MAIL"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme
 ZSH_THEME="Bira"
-
 
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
