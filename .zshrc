@@ -13,11 +13,17 @@ source $ZSH/oh-my-zsh.sh
 # Editor
 alias v="vim"
 
-# Compilation flags
+# Simple
+alias see="cat */*"
+alias l="ls -lahgpS"
+alias lr="l */*"
+alias cl="clear"
+alias q="exit"
+
+# Compilation & Normes
 alias n="norminette -R CheckForbiddenSourceHeader"
 alias c="gcc -Wall -Wextra -Werror"
-alias see="cat */*"
-
+alias check="n && c **/*.c -c && rm -rf **/*.o"
 
 # Git
 alias g="git"
@@ -41,6 +47,17 @@ r() {
 	gcc -Wall -Wextra -Werror *.c
 	./a.out $@
 	rm -rf a.out
+}
+
+# Adds non exercices files to gitignore in case one of them was missed
+gitignore() {
+	echo ".gitignore" > .gitignore
+	echo "*.o" >> .gitignore
+	echo "*.out" >> .gitignore
+	echo "*.swp" >> .gitignore
+	echo "*.a" >> .gitignore
+	echo "test_*" >> .gitignore
+	echo ".DS_Store" >> .gitignore
 }
 
 # Create c files in all ex* directories and append useful lines to them
